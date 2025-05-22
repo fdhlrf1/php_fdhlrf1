@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soal A</title>
+    <title>Soal A nomor 1</title>
 </head>
 
 <body>
-
+    <h1>Soal A | SOAL 1</h1>
     <form action="" method="POST">
         <h2>Tampilan No. 1</h2>
 
@@ -77,11 +77,13 @@
     <h2>Tampilan No. 3</h2>
     <?php
     if (isset($_POST['submit_kedua'])) {
-        $data = $_POST['data'];
+        $data = $_POST['data'] ?? '';
 
-        foreach ($data as $key1 => $row) {
-            foreach ($row as $key2 => $isi) {
-                echo "{$key1}.{$key2} : $isi<br>";
+        if ($data != '') {
+            foreach ($data as $key1 => $row) {
+                foreach ($row as $key2 => $isi) {
+                    echo "{$key1}.{$key2} : $isi<br>";
+                }
             }
         }
     }
