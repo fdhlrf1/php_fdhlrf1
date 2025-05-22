@@ -12,7 +12,7 @@
 
     if (isset($_POST)) {
         // var_dump($_POST);
-        $search = $_POST['search'];
+        $search = $_POST['search'] ?? '';
         $query_search = "SELECT hobi, COUNT(person_id) as jumlah_person FROM hobi WHERE hobi LIKE '%$search%' GROUP BY hobi ORDER BY jumlah_person DESC";
         $result_search = mysqli_query($koneksi, $query_search);
 
